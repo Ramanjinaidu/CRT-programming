@@ -1,44 +1,3 @@
-#1. Count the number of digits in a given number.
-# n = int(input())
-# temp = n
-# count = 0
-# while n>0:
-#     count += 1
-#     n = n // 10
-# print(count)
-# print(len(str(temp)))
-
-#2. Finding sum of digits in a number
-
-# n = int(input())
-# s = 0
-# while n>0:
-#     s += n%10
-#     n = n//10
-# print(s)
-
-#3. Count even digits and odd digits of a number
-
-# n = int(input())
-# even_count = 0
-# odd_count = 0
-# ev_sum = 0
-# od_sum = 0
-# while n>0:
-#     digit = n%10
-#     if digit%2 == 0:
-#         even_count += 1
-#         ev_sum += digit
-
-#     else:
-#         odd_count += 1
-#         od_sum += digit
-#     n = n//10
-# print("Even digits:", even_count)
-# print("Odd digits:", odd_count)
-# print("Even_Sum:",ev_sum)
-# print("Odd_Sum:",od_sum)
-
 #1 Count the number of digits in a given number.
 """
 n = int(input())
@@ -86,15 +45,76 @@ else:
     print("Not a palindrome")
 """
 # 5 check Armstrong number
-num = int(input())
-temp = num
+"""
+n = int(input())
+temp = n
 s = 0
-n = len(str(num))
-while num>0:
-    digit = num%10
-    s += digit**n
-    temp = temp//10
-if num == s:
-    print("Armstrong")
+l = len(str(n))
+for i in range(l):
+    digit = n%10
+    s += digit**l
+    n = n//10
+if s == temp:
+    print("Armstrong Number")
 else:
-    print("Not an Armstrong")
+    print("Not an Armstrong number")
+"""
+
+#6 Find largest digit in a number
+"""
+n = int(input("Enter a number:"))
+largest = 0
+while n>0:
+    digit = n%10
+    n = n//10
+    if digit > largest:
+        largest = digit
+print(largest)
+"""
+#7 Find the Smallest digit in a number
+"""
+n = int(input())
+smallest = 9
+while n>0:
+    digit = n%10
+    n //= 10
+    if digit<smallest:
+        smallest = digit
+print(smallest)
+"""
+
+#8 count the number of zeros
+"""
+n = int(input())
+zero_count = 0
+while n> 0:
+    digit = n%10
+    n = n//10
+    if digit == 0:
+        zero_count += 1
+print(zero_count)
+"""
+#9 Digital Sum problem
+"""
+n = int(input())
+while n>10:
+    s = 0
+    while n>0:
+        s += n%10
+        n = n//10
+    n = s
+print("Digital Sum:",s)
+"""
+#10 Checking of SPY number
+
+n = int(input())
+s = 0
+p = 1
+while n>0:
+    s += n%10
+    p *= n%10
+    n = n//10
+if s == p:
+    print("SPY number")
+else:
+    print("NOt a SPY number")
