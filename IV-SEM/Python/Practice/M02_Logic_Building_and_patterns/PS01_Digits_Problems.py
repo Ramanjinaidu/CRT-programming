@@ -94,7 +94,7 @@ while n> 0:
         zero_count += 1
 print(zero_count)
 """
-#9 Digital Sum problem
+#9 Digital Root
 """
 n = int(input())
 while n>10:
@@ -106,7 +106,7 @@ while n>10:
 print("Digital Sum:",s)
 """
 #10 Checking of SPY number
-
+"""
 n = int(input())
 s = 0
 p = 1
@@ -118,3 +118,46 @@ if s == p:
     print("SPY number")
 else:
     print("NOt a SPY number")
+"""
+#11 Find Largest Digit
+"""
+n = int(input("Enter a Number:"))
+L = 0
+S = float('inf')
+while n>0:
+    digit = n%10
+    if digit > L:
+        L = digit
+    if digit < S:
+        S = digit
+    n = n//10
+print("Largest Digit:",L)
+print("Smallest Digit:",S)
+"""
+#12 Neon Number
+"""
+n = int(input())
+temp = n
+temp = temp**2
+s = 0
+while temp>0:
+    s += temp%10
+    temp = temp//10
+if s == n:
+    print("Neon Number")
+else:
+    print("Not a Neon Number")
+"""
+#13 Convert digits into words
+n = int(input())
+words = ["Zero","One","Two","Three","Four","Five","Six","Seven","Eight","Nine"]
+result = []
+if n == 0:
+    print("Zero")
+while n>0:
+    digit = n%10
+    result.append(words[digit])
+    n = n//10
+result.reverse()
+
+print(*result)
