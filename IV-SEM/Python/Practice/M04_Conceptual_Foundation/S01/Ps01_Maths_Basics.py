@@ -27,9 +27,15 @@ print(math.ceil(4.2))
 print(math.floor(4.2))
 print(math.pi)
 print(math.factorial(5))
-"""
+
 # GCD of a two numbers
 import math
 a = int(input())
 b = int(input())
 print(math.gcd(a,b))
+"""
+import math
+a = int(input())
+b = int(input())
+gcd = math.gcd(a,b)
+print((a*b)//gcd)
